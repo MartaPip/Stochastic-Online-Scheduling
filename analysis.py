@@ -56,7 +56,7 @@ def make_plot(N,M,distribution,mean,method, Tigth_analysis,fixed_release_par,upp
 
     
     if method=="DSOS":
-        predicted=1+((2+alpha)*(CV+1)/2)
+        predicted=max(1+((2+alpha)*(CV+1)/2),2+alpha)
         if Worst:  name_DSOS=f"{distribution}_DSOS_{round(CV,2)}_Worst.csv"
         else: name_DSOS=f"{distribution}_DSOS_{round(CV,2)}.csv"
         data=pd.read_csv(os.path.join(path,name_DSOS))
